@@ -1,0 +1,32 @@
+﻿<Application
+    x:Class="HAS_Post.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:models="clr-namespace:HAS_Post.Models">
+
+    <!--Application Resources-->
+    <Application.Resources>
+        <local:LocalizedStrings xmlns:local="clr-namespace:HAS_Post" x:Key="LocalizedStrings"/>
+        <models:DataModel x:Key="dataModel"/>        
+        <shell:ApplicationBar x:Key="AppBarDescubre" IsVisible="True" IsMenuEnabled="True">
+            <!--<shell:ApplicationBarIconButton IconUri="/Images/Search.png" Text="Agregar"/>-->
+            <shell:ApplicationBarIconButton IconUri="/Images/Add.png" Text="Nuevo" Click="AppBarAddRecommendation_Click"/>
+            <!--<shell:ApplicationBarIconButton IconUri="/Images/Like.png" Text="Me gusta"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/Earth.png" Text="Ubicación"/>-->
+        </shell:ApplicationBar>
+        <!--<shell:ApplicationBar x:Key="AppBarPerfil" IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/Search.png" Text="Agregar"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/Add.png" Text="Nuevo"/>
+        </shell:ApplicationBar>-->
+    </Application.Resources>
+
+    <Application.ApplicationLifetimeObjects>
+        <!--Required object that handles lifetime events for the application-->
+        <shell:PhoneApplicationService
+            Launching="Application_Launching" Closing="Application_Closing"
+            Activated="Application_Activated" Deactivated="Application_Deactivated"/>
+    </Application.ApplicationLifetimeObjects>
+
+</Application>
